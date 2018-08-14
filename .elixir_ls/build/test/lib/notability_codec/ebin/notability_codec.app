@@ -1,0 +1,9 @@
+{application,notability_codec,
+             [{applications,[kernel,stdlib,elixir,logger,egd,plist]},
+              {description,"notability_codec"},
+              {modules,['Elixir.NotabilityCodec',
+                        'Elixir.NotabilityCodec.Decode',
+                        'Elixir.NotabilityCodec.Encode']},
+              {registered,[]},
+              {vsn,"0.1.0"},
+              {extra_applications,[logger]}]}.
