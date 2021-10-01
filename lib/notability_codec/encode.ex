@@ -73,6 +73,7 @@ defmodule NotabilityCodec.Encode do
 
   def to_path({points, color, stroke_width, fractional_widths}) do
     {a, b, g, r} = color
+    opacityPerc = a/255
 
     fractional_widths_str = fractional_widths |> Enum.join(" ")
 
@@ -80,7 +81,7 @@ defmodule NotabilityCodec.Encode do
     IO.inspect(fractional_widths_str)
 
     str =
-      "<path stroke-width=\"#{stroke_width}\" stroke=\"rgba(#{r}, #{g}, #{b}, #{a})\" fill=\"none\" stroke-profile=\"#{
+      "<path stroke-width=\"#{stroke_width}\" stroke=\"rgba(#{r}, #{g}, #{b}, #{a})\" fill=\"none\" opacity=\"#{opacityPerc}\" stroke-profile=\"#{
         fractional_widths_str
       }\" d=\""
 
