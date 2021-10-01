@@ -15,7 +15,7 @@ defmodule NotabilityCodec.Decode do
   end
 
   def read_session(binary_plist) do
-    plist_map = binary_plist |> Plist.Binary.parse()
+    plist_map = binary_plist |> Plist.Binary.decode()
 
     # I think the only important thing here is objects
     objects = plist_map["$objects"]
